@@ -1,0 +1,32 @@
+image: node:17-alpine
+
+before_script:
+  - npm install -g sass
+
+workflow:
+  rules:
+    - if: "$CI_COMMIT_BRANCH"
+
+pages:
+  stage: deploy
+  rules:
+    - if: $CI_COMMIT_REF_NAME == 'main'
+  variables:
+    OUTPUT_DIR: 'public'
+  artifacts:
+    paths:
+      - "$OUTPUT_DIR"
+    expire_in: 1 day
+  script:
+    - mkdir -p "$OUTPUT_DIR/styles"
+    - cp -r index.html keys "$OUTPUT_DIR"
+    - cp styles/normalize.css "$OUTPUT_DIR/styles"
+    - sass styles/style.sass "$OUTPUT_DIR/styles/style.css"
+
+pages-test:
+  stage: test
+  rules:
+    - if: $CI_COMMIT_REF_NAME != 'main'
+  extends: pages
+  variables:
+    OUTPUT_DIR: 'test'
