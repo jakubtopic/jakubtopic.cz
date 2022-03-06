@@ -1,0 +1,3 @@
+Contact: me@jakubtopic.cz
+Encryption: https://jakubtopic.cz/keys/jakubtopic.asc
+Signature: https://jakubtopic.cz/.well-known/security.txt.sig

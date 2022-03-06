@@ -19,7 +19,7 @@ pages:
     expire_in: 1 day
   script:
     - mkdir -p "$OUTPUT_DIR/styles"
-    - cp -r index.html keys "$OUTPUT_DIR"
+    - cp -r index.html keys .well-known "$OUTPUT_DIR"
     - cp styles/normalize.css "$OUTPUT_DIR/styles"
     - sass styles/style.sass "$OUTPUT_DIR/styles/style.css"
 
