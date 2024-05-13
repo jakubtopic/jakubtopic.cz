@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap');
+
+$bg: #35342b;
+$fg: #ffffff;
+$primary: #fdd835;
+$secondary: #fd7435;
+
+:root {
+  font-family: "JetBrains Mono", monospace;
+  line-height: 1.5;
+  font-weight: 500;
+
+  background-color: $bg;
+  color: $fg;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: white;
+  background: $secondary;
+}
+
+a {
+  font-weight: 500;
+  color: inherit;
+  background-color: transparent;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+body {
+  padding: 5% 0;
+  margin: 0;
+  font-size: 14px;
+
+  @media screen and (max-width: 600px) {
+    padding-top: 20px;
+  }
+}
+
+main {
+  max-width: 500px;
+  margin: auto;
+  position: relative;
+
+  @media screen and (max-width: 600px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media screen and (max-width: 350px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+h1,
+h2 {
+  color: $primary;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.3rem;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+strong {
+  font-weight: 700;
+  color: $secondary;
+}
+
+small {
+  font-size: 80%;
+}
+
+pre {
+  margin-top: 0.3rem;
+  font-weight: 300;
+  font-family: "JetBrains Mono", monospace;
+}
+
+ul {
+  padding-left: 29px;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 0.4rem;
+
+  &::before {
+    content: "\2014";
+    display: inline-block;
+    position: absolute;
+    margin-left: -20px;
+  }
+}
